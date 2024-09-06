@@ -155,8 +155,8 @@
           "expr": "sum(rate(container_cpu_usage_seconds_total{namespace=~\"$namespace\", image!=\"\", cluster=\"$cluster\"}[$__rate_interval])) / sum(kube_node_status_capacity{resource=\"cpu\", cluster=\"$cluster\"})",
           "instant": true,
           "interval": "",
-          "legendFormat": "",
-          "range": false,
+          "legendFormat": "__auto",
+          "range": true,
           "refId": "A"
         }
       ],
