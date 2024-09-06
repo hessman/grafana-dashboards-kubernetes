@@ -152,7 +152,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "sum(rate(container_cpu_usage_seconds_total{namespace=~\"$namespace\", image!=\"\", cluster=\"$cluster\"}[$__rate_interval])) / sum(machine_cpu_cores{cluster=\"$cluster\"})",
+          "expr": "sum(rate(container_cpu_usage_seconds_total{namespace=~\"$namespace\", image!=\"\", cluster=\"$cluster\"}[$__rate_interval])) / sum(kube_node_status_capacity{resource=\"cpu\", cluster=\"$cluster\"})",
           "instant": true,
           "interval": "",
           "legendFormat": "",
@@ -529,7 +529,7 @@
             "uid": "${datasource}"
           },
           "editorMode": "code",
-          "expr": "sum(machine_cpu_cores{cluster=\"$cluster\"})",
+          "expr": "sum(kube_node_status_capacity{resource=\"cpu\", cluster=\"$cluster\"})",
           "hide": false,
           "legendFormat": "Cluster Total",
           "range": true,

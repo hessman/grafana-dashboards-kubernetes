@@ -647,7 +647,7 @@
             "uid": "${datasource}"
           },
           "exemplar": true,
-          "expr": "sum(machine_cpu_cores{node=\"$node\", cluster=\"$cluster\"})",
+          "expr": "sum(kube_node_status_capacity{resource=\"cpu\", node=\"$node\", cluster=\"$cluster\"})",
           "interval": "$resolution",
           "legendFormat": "",
           "refId": "A"
